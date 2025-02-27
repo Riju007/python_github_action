@@ -20,4 +20,4 @@ jobs:
         run: |
           echo "---------------- The files are listed below ------------------"
           ls ${{ github.workspace }}
-      - run: the job's status is ${{ job.status }}
+      - run: echo "the job's status is ${{ job.status }}"
