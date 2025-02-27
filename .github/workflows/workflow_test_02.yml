@@ -1,0 +1,19 @@
+name: Testing execution of basic python script
+run-name: ${{ github.actor }} is testing for python
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+jobs:
+  run-python-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+      - run: echo "Checked out code successfully for ${{ github.ref }}"
+      - name: run python file
+        run: |
+          cd src
+          python test_python_01.py
+          echo "Python file run successfully."
