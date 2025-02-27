@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "The job was automatically triggered by a ${{ github.event_name }}"
-      - run: echo "The job is now running on a ${{ runner.or }} server hosted by github"
+      - run: echo "The job is now running on a ${{ runner.os }} server hosted by github"
       - run: echo "The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository}}"
       - name: Checkout Repository code
         uses: actions/checkout@v4
