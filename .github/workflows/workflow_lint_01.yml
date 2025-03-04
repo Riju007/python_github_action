@@ -1,0 +1,22 @@
+name: Check linting for a python file
+run-name: ${{ github.actor }} is testing linting for python file
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        id: checkout_code
+        uses: actions/checkout@v4
+      - run: echo "Checked out code successfully for ${{ github.ref }}"
+      - name: install required packages
+        run: pip install -r requirements.txt
+      - name: lint project
+        run: |
+          cd src
+          flake8 .
+        

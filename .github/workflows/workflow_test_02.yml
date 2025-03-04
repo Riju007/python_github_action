@@ -2,9 +2,9 @@ name: Testing execution of basic python script
 run-name: ${{ github.actor }} is testing for python
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
 jobs:
   run-python-file:
     runs-on: ubuntu-latest
